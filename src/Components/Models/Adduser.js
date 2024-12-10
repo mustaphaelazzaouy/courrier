@@ -49,7 +49,7 @@ const regex=/[a-zA-Z0-9.]+@[a-z0-9.]+\.[a-z]{2,8}/g; //(.[a-z{2,8}])?
      {
  
 //email validation
-alert(email.value)
+
 if(!regex.test(email.value)){
  
   setEmail({...email,err:true,msg:"المرجو إدخال بريد إلكترونى صحيح"})
@@ -135,7 +135,7 @@ useMemo(()=>{
           </div>
 
           <div className="formitem">
-            <h3>إسم المستعمل<span className="etoile">*</span></h3>
+            <h3>رقم التأجير<span className="etoile">*</span></h3>
             <input type="text" placeholder="إسم المستعمل..."  value={login.value} 
             className={login.err ? "erreur" : ""}
             onChange={(e) => {setLogin({value:e.target.value,err:false});  }}/>
@@ -152,7 +152,7 @@ useMemo(()=>{
 
           <div className="formitem">
             <h3> كلمة المرور <span className="etoile">*</span> </h3>
-            <input type="text" placeholder="  كلمة المرور ..."  value={passwd1.value}
+            <input type="password" placeholder="  كلمة المرور ..."  value={passwd1.value}
             className={passwd1.err ? "erreur" : ""}
             onChange={(e) => {setPasswd1({...passwd1,value:e.target.value,err:false});
             setPasswd2({...passwd2,err:false}) }}/>
@@ -161,7 +161,7 @@ useMemo(()=>{
 
           <div className="formitem">
             <h3>تأكيد كلمة المرور<span className="etoile">*</span></h3>
-            <input type="text" placeholder=" تأكيد كلمة المرور ..." value={passwd2.value} 
+            <input type="password" placeholder=" تأكيد كلمة المرور ..." value={passwd2.value} 
             className={passwd2.err ? "erreur" : ""}
             onChange={(e) => {setPasswd2({...passwd2,value:e.target.value,err:false});
             setPasswd1({...passwd1,err:false});
