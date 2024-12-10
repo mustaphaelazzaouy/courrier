@@ -132,6 +132,7 @@ export default function Adduser(props) {
               <option value="كلميم">كلميم</option>
               <option value="أسا الزاك">أسا الزاك</option>
               <option value="سيدي إفني">سيدي إفني</option>
+              <option value="سيدي إفني">سيدي إفني</option>
                 </select>
               </div>
 
