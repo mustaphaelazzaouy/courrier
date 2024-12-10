@@ -93,3 +93,17 @@ button {
   overflow-x: auto;
 }
 
+.mainCorr .listecr  .entete{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+
+.mainCorr .listecr .entete button{
+  background-color: var(--maincolor);
+ color: white;
+ font-size: 15pt;
+ cursor: pointer;
+ width: 100px; 
+ padding: 0;
+ }

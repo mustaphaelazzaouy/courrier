@@ -3,98 +3,31 @@ import "../Styles/Courrier.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
+import AdCourrier from "./Models/AddCourrier";
 
 export default function Courrier() {
-    const [objet,setObjet]=useState()
+   
+    const [OpenAddCourrier, setOpenAddCourrier] = useState(false);
+
     
 
-    const send=(e)=>{
-        e.preventDefault()
-      alert(objet)
-    }
+   
+  function AddCourrier() {
 
-    const update=(e)=>{
-        e.preventDefault()
-
-      alert("update")
-    }
+    setOpenAddCourrier(true);
+  }
   return (
     <div className="mainCorr"  >
         
-    <form onSubmit={send} >
-        <div className="formitems">
-        
-            <div className="formitem">
-                <h3>رقم المراسلة <span className='etoile'>*</span>
-                
-                </h3>
-                <input type="text" placeholder="... رقم المراسلة"  name="numcrr" />
-            </div>
-
-            <div className="formitem">
-                <h3>الموضوع<span className='etoile'>*</span></h3>
-                <input type="text" placeholder="... الموضوع" name="objet" onChange={e=>setObjet(e.target.value)} />
-            </div>
-            <div className="formitem">
-                <h3>تاريخ التوصل <span className='etoile'>*</span></h3>
-                <input type="date" name="daterec" />
-            </div>
-
-            <div className="formitem">
-                <h3>تاريخ التنفيذ <span className='etoile'>*</span></h3>
-                <input type="date" name="datexe" />
-            </div>
-
-
-            <div className="formitem">
-                <h3>المديرية الإقليمية<span className='etoile'>*</span></h3>
-                <select name="dp">
-                    <option value="1"></option>
-                    <option value="2">طانطان</option>
-                    <option value="3">كلميم</option>
-                    <option value="4">أسا الزاك</option>
-                    <option value="5">سيدي إفني</option>
-                </select>
-            </div>
-
-            <div className="formitem">
-                <h3>المصلحة<span className='etoile'>*</span></h3>
-                <select name="service">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-
-            <div className="formitem" >
-                <h3>الملاحظات</h3>
-                <textarea placeholder="... الملاحظات" name="observation"></textarea>
-                               </div>
-
-            <div className="formitem" >
-                <h3>تحميل الملف</h3>
-                <input type="file"  name="file" accept="" />
-            </div>
-
-
-        </div>
-        <div className="formitems btn ">
-            <div className="formitem ">
-            <button type="submit"   >إرسال</button>
-                {/* <button onClick={abbassi}>إرسال</button> */}
-            </div>
-            <div className="formitem ">
-                <button onClick={update} >تعديل</button>
-            </div>
-        </div>
-
-        </form>
+       
 
         <div class="listecr">
-            <h2>لائحة المراسلات</h2>
+        <div className="entete">
+        <h2>لائحة المراسلات</h2>
+          <button type="submit" onClick={() => AddCourrier()}>
+            إضافة
+          </button>
+        </div>
             <table>
                 <thead>
                     <th>رقم المراسلة</th>
@@ -160,7 +93,9 @@ export default function Courrier() {
             </table>
         </div>
 
-    
+        {OpenAddCourrier &&  <AdCourrier close={setOpenAddCourrier} title="إضافة مراسلة جديدة" />}
+
+     
 </div>
   )
 }
