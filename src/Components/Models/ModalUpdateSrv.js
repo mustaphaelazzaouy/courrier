@@ -1,10 +1,12 @@
 import React, {useEffect, useState } from "react";
 import "../../Styles/ModalUpdateSrv.css";
 import axios from 'axios';
+import Modal from "./Modal";
+
 export default function ModalUpdateSrv(props) {
 
 
-
+  const [OpenModelUpdate, setOpenModelUpdate] = useState(false);
   const [dp,setDp]=useState("طانطان")
 const [srv,setSrv]=useState("")
 const [ID,setID]=useState(props.id)
@@ -12,6 +14,7 @@ const [ID,setID]=useState(props.id)
 const handleupdate= async()=>{
   await axios.put("http://localhost:5000/api/services/"+ID,{dp:dp,service:srv})
   // props.close(false)
+  setOpenModelUpdate(true)
 }
 
 useEffect(()=>{
@@ -69,6 +72,7 @@ useEffect(()=>{
           </button>
         </div>
       </div>
+      {OpenModelUpdate && <Modal  close={setOpenModelUpdate} color="rgb(24, 141, 231)" title="تعديل" body="تمت تعديل المصلحة بنجاح"/>}
     </div>
   );
 }

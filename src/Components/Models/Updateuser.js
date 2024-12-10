@@ -97,7 +97,7 @@ export default function Adduser(props) {
 
 
               <div className="formitem">
-                <h3>إسم المستعمل<span className="etoile">*</span></h3>
+                <h3>رقم التأجير <span className="etoile">*</span></h3>
                 <input type="text" placeholder="إسم المستعمل..." value={login.value}
                   onChange={(e) => {setLogin({...login,value:e.target.value});}}/>
               </div>
@@ -112,14 +112,14 @@ export default function Adduser(props) {
 
               <div className="formitem">
                 <h3>كلمة المرور <span className="etoile">*</span></h3>
-                <input type="text" placeholder="  كلمة المرور ..." value={passwd1.value}
+                <input type="password" placeholder="  كلمة المرور ..." value={passwd1.value}
                   onChange={(e) => {setPasswd1({...passwd1,value:e.target.value}); }} />
               </div>
 
 
               <div className="formitem">
                 <h3>تأكيد كلمة المرور<span className="etoile">*</span></h3>
-                <input type="text" placeholder=" تأكيد كلمة المرور ..." value={passwd2.value}
+                <input type="password" placeholder=" تأكيد كلمة المرور ..." value={passwd2.value}
                   onChange={(e) => {setPasswd2({...passwd2,value:e.target.value}); }}/>
               </div>
 
