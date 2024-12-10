@@ -1,0 +1,16 @@
+/*------------------start footer----------------------*/
+.footer{
+   
+    background-color: var(--maincolor);
+    padding: 20px 0px;
+    color: white;
+    text-align: center;
+}
+/*------------------end footer----------------------*/
+
+@media (max-width:500px) {
+    .footer{
+   
+        font-size: 12px;
+    } 
+}

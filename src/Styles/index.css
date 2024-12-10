@@ -1,0 +1,119 @@
+
+:root {
+    /* --maincolor:    rgb(10, 169, 119);
+        --maincolor2 : rgb(30, 120, 91);
+        --maincolor3 : rgb(222, 251, 187); */
+    --maincolor:    rgb(24, 101, 145);
+    --maincolor2:    rgb(25, 75, 103); 
+     --maincolor3 : rgb(167, 221, 252);
+
+    font-family: Amiri    ,Aljazeera, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+ 
+/*********largeur du button de validation **************/
+--widthBtn: 200px;
+  }
+  .formitems .formitem input,textarea,select {
+    outline: none;
+ 
+  }
+ 
+
+::placeholder{
+    font-family: Aljazeera, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color:rgb(208, 205, 205);
+  }
+  
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/*  erreur */
+
+
+/* table ********************************/
+
+
+table {
+  
+  width:100%;
+  text-align: center;
+
+
+}
+table tr:hover,table tr:nth-of-type(2n):hover{
+background-color:  rgb(196, 195, 195);
+
+}
+table th {
+  background-color: rgb(196, 195, 195);
+  
+  padding: 5px;
+  border-radius: 2px;
+}
+
+table tr:nth-of-type(2n){
+  background-color: rgb(241, 240, 240);
+}
+
+
+
+
+
+/* table td {
+   
+    border-bottom: 1px solid  rgb(216, 216, 216);
+   
+  } */
+
+table td .update    {
+  color: var(--maincolor);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+table td .delete {
+ 
+  color:  rgb(212, 92, 106);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+table td .delete:hover, table td .update:hover {
+  opacity: 0.6;
+}
+.etoile{
+  color: red;
+  font-weight: bold;
+}
+
+
+@media (max-width:600px){
+
+  table{
+    border:1px solid rgb(230, 230, 230);
+  }
+  table th{
+    display: none;
+
+  }
+  table td{
+    display: block;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 10px;
+  }
+  table td:before{
+    content:" -  " attr(data-cell) " :  ";
+    font-weight: 900;
+    color: rgb(21, 57, 34);
+    border-bottom: 1px solid rgb(220, 220, 220);
+  }
+  
+}
+
+/********* button de validation **************/
+

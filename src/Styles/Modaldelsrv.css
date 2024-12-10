@@ -1,0 +1,81 @@
+.backgrounddelsrv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.backgrounddelsrv .modal {
+  border-radius: 3px;
+  background-color: white;
+  width: 50%;
+}
+
+@media (max-width: 500px) {
+  .backgrounddelsrv .modal {
+    width: 80%;
+  }
+}
+
+.backgrounddelsrv .modal .close {
+  width: fit-content;
+  background-color: transparent;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  border: none;
+  margin-left: 10px;
+}
+.backgrounddelsrv .modal .close:hover {
+  color: rgb(0, 0, 0);
+}
+
+.backgrounddelsrv .modal .modaltitle {
+  padding: 10px 0px;
+
+  background-color: rgb(228, 67, 67);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.backgrounddelsrv .modal .modaltitle h2 {
+  color: white;
+
+  margin-right: 15px;
+}
+
+.backgrounddelsrv .modal .modalbody {
+  margin: 20px 0px;
+  padding: 10px;
+  text-align: center;
+}
+
+.backgrounddelsrv .modal .modalbtn {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px 10px;
+  gap: 20px;
+}
+
+.backgrounddelsrv .modal .modalbtn .btn {
+  width: fit-content;
+  cursor: pointer;
+  width: 100px;
+  font-size: 12pt;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color:  rgb(228, 67, 67);
+  font-weight: 900;
+  color: rgb(255, 255, 255);
+}
+
+.backgrounddelsrv .modal .modalbtn .btn:hover {
+  color: rgb(215, 215, 215);
+}

@@ -1,0 +1,10 @@
+.mainStat{
+    height: calc(100vh - 160px);
+    margin: 20px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    background-color: rgb(239, 239, 239);
+    border: 1px solid rgb(199, 199, 199);
+    border-radius: 5px;
+}

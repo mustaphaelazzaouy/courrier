@@ -1,0 +1,196 @@
+.menu {
+  background-color: var(--maincolor);
+  /* padding: 5px; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* flex-direction: row-reverse; */
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/********************* start userInfo *******************/
+.menu .userinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  position: absolute;
+  top: 61px;
+  left: 0;
+  width: 300px;
+  height: fit-content;
+  background-color: var(--maincolor3);
+  display: none;
+  padding: 10px;
+
+  /*  */
+}
+.menu .userinfo.isopen {
+  display: block;
+}
+
+.menu .userinfo .closeuserinfo {
+  width: fit-content;
+}
+
+.menu .userinfo .closeuserinfo button {
+  width: fit-content;
+  background-color: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+}
+
+.menu .userinfo .deconnecter button {
+  background-color: var(--maincolor);
+  color: white;
+  cursor: pointer;
+}
+
+.menu .userinfo .closeuserinfo button:hover {
+  color: rgb(168, 167, 167);
+}
+
+/******************** end userInfo **************************/
+
+.menu .logo a {
+  color: white;
+  margin: 0px 20px;
+  text-decoration: none;
+  font-size: 25px;
+  /* background-color: rgb(145, 174, 253); */
+}
+
+.menu .logo a:hover {
+  color: rgb(232, 232, 232);
+}
+
+.menu .logo .lg {
+  margin-left: 10px;
+}
+.menu .menu-items {
+  /* background-color: rgb(168, 245, 172);  */
+  display: flex;
+}
+
+/* .menu .menu-items .item {
+    
+
+} */
+
+.menu .menu-items .item a {
+  text-decoration: none;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  /* border-radius: 10px; */
+  padding: 15px;
+  display: inline-block;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.menu .menu-items .item a:hover {
+  color: var(--maincolor);
+  background-color: rgb(231, 228, 228);
+}
+
+.menu .menu-items .itemuser a {
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--maincolor3);
+  /* border-radius: 10px; */
+  display: inline-block;
+  padding: 15px 15px;
+  transition: 1s;
+}
+
+.menu .menu-items .itemuser a:hover {
+  color: rgb(0, 0, 0);
+  background-color: var(--maincolor3);
+}
+/*------------------end menu------------------------*/
+
+/************ burger icon *************/
+.menu .Burger {
+  display: none;
+  width: 35px;
+  height: 28px;
+  position: relative;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.menu .Burger span {
+  width: 100%;
+  height: 4px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.menu .Burger span:first-child {
+  top: 0px;
+  left: 0;
+}
+
+.menu .Burger span:nth-child(2) {
+  top: 10px;
+  left: 0;
+}
+.menu .Burger:hover span:nth-child(2) {
+  width: 80%;
+}
+
+.menu .Burger span:last-child {
+  top: 20px;
+  left: 0;
+}
+
+.menu .Burger:hover span:last-child {
+  width: 60%;
+}
+
+/************ END burger icon *************/
+/*------------------Start respensive------------------------*/
+
+@media (max-width: 870px) {
+  .menu {
+    padding: 14.5px 0px 0px;
+  }
+  .menu .logo a {
+    font-size: 20px;
+    /* background-color: rgb(145, 174, 253); */
+  }
+
+  .menu .menu-items {
+    display: none;
+    width: 100%;
+    background-color: var(--maincolor2);
+  }
+
+  .menu .menu-items .itemuser a {
+    width: 100%;
+  }
+  .menu .menu-items .item a {
+    width: 100%;
+  }
+
+  .menu .menu-items.isopen {
+    display: block;
+  }
+
+  .menu .Burger {
+    display: block;
+  }
+
+  .menu .userinfo {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/*------------------end respensive------------------------*/

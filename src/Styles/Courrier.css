@@ -1,0 +1,95 @@
+.mainCorr {
+  padding: 10px;
+  min-height: 100dvh;
+}
+
+.mainCorr .formitems {
+  
+  border: 1px solid rgb(211, 211, 211);
+  background-color: rgb(236, 236, 236);
+  border-radius: 7px;
+  padding: 10px;
+  display: grid;
+  margin-bottom: 2px;
+  grid-template-columns:  1fr 1fr 1fr;
+  /* grid-template-columns: repeat(3, minmax(200px, 100%)); */
+}
+
+@media (max-width: 970px) {
+  .mainCorr .formitems {
+    grid-template-columns:  1fr 1fr;
+  }
+  }
+
+  @media (max-width: 800px) {
+    .mainCorr .formitems {
+      grid-template-columns:  1fr;
+    }
+    }
+
+.mainCorr .formitems .formitem {
+  /* background-color: rgb(128, 160, 250); */
+   padding: 10px; 
+}
+
+.mainCorr .formitems .formitem input,
+textarea,
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+
+.mainCorr   .formitems.btn   {
+
+  padding: 6px;
+  background-color: transparent;
+ display: flex;
+ gap :10px;
+
+  border: 0px transparent solid;
+}
+
+
+
+@media (max-width: 800px) {
+  .mainCorr   .formitems.btn   {
+   flex-direction: column;}
+}
+
+
+
+
+.mainCorr   .formitems.btn  .formitem {
+  padding: 0px;
+  
+}
+
+.mainCorr   .formitems .formitem button {
+  background-color: var(--maincolor);
+  color: white;
+  font-size: 15pt;
+  cursor: pointer;
+  width: var(--widthBtn);
+
+}
+@media (max-width: 800px) {
+  .mainCorr   .formitems.btn button   {
+  width:100%;}
+}
+
+
+
+
+/* tableau css *****************/
+.mainCorr .listecr {
+  border-radius: 7px;
+  padding: 10px;
+  overflow-x: auto;
+}
+

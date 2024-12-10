@@ -1,0 +1,13 @@
+.mainhome{
+    padding: 20px;
+    height: calc(100vh - 130px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap :30px;
+}
+
+.icon{
+    font-size: 100px;
+    /* color: var(--maincolor); */
+}

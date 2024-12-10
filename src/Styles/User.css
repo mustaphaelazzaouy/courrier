@@ -1,0 +1,195 @@
+.mainuser{
+    padding: 10px;
+  min-height: 100dvh;
+}
+
+.mainuser .formitems{
+    border: 1px solid rgb(211, 211, 211);
+    background-color: rgb(236, 236, 236);
+   border-radius: 7px;
+   padding: 10px;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   /* grid-template-columns: repeat(6, minmax(100px, 1fr)); */
+}
+
+@media (max-width: 870px) {
+  .mainuser .formitems {
+    grid-template-columns:  1fr 1fr;
+  }
+  }
+
+  @media (max-width: 600px) {
+    .mainuser .formitems {
+      grid-template-columns:  1fr;
+    }
+    }
+
+.mainuser .formitems .formitem{
+    /* background-color: rgb(128, 160, 250); */
+    padding: 10px;
+  
+ }
+
+ .mainuser .formitems .formitem input,textarea,select,button {
+    width: 100%;
+    padding: 12px ;
+ 
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+ 
+  }
+ 
+
+
+  .mainuser   .formitems.btn   {
+    padding: 6px;
+    background-color: transparent;
+    display: flex;
+    
+
+    gap:10px;
+    border: 0px transparent solid;
+  }
+  @media (max-width: 660px) {
+    .mainuser   .formitems.btn   {
+      
+    flex-direction:column;}
+  }
+  .mainuser   .formitems.btn  .formitem {
+    padding: 0px;
+    
+  }
+
+  .mainuser .formitems .formitem button {
+
+    background-color: var(--maincolor);
+    color: white;
+    font-size: 15pt;
+  cursor: pointer;
+  width: var(--widthBtn);
+  }
+  @media (max-width: 660px) {
+    .mainuser   .formitems.btn button  {
+      width: 100%;
+    }
+  }
+ 
+ /* tableau css ******************/
+ .mainuser .listeUser{
+   
+  border-radius: 7px;
+  padding: 10px;
+  
+  overflow-x: auto;
+}
+
+.mainuser .listeUser .entete{
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0px;
+}
+
+
+.mainuser .listeUser .entete button{
+ background-color: var(--maincolor);
+color: white;
+font-size: 15pt;
+cursor: pointer;
+width: 100px; 
+padding: 0;
+}
+
+.mainuser .listeUser .entete button:hover{
+  color:#ccc;
+}
+
+
+.mainuser .listeUser .research {
+ border: 1px solid #ccc;
+ border-radius: 3px;
+ 
+}
+.mainuser .listeUser .research .title{
+  background-color:var(--maincolor);
+  color:white;
+ padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.mainuser .listeUser .research #body{
+  display: none;
+}
+
+.mainuser .listeUser .research .title #shhd:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
+.mainuser .listeUser .research .bodyr{
+
+}
+
+.mainuser .listeUser .research .bodyr .formitemsr{
+ display: grid;
+ gap: 10px;
+grid-template-columns: 1fr 1fr  1fr 1fr;
+padding: 10px;
+background-color: rgb(244, 244, 244);
+}
+@media (max-width:750px) {
+  .mainuser .listeUser .research .bodyr .formitemsr{
+    grid-template-columns: 1fr 1fr ;
+    }
+
+}
+@media (max-width:600px) {
+  .mainuser .listeUser .research .bodyr .formitemsr{
+    grid-template-columns: 1fr ;
+    }
+
+}
+.mainuser .listeUser .research .bodyr .formitemsr .formitemr{
+ 
+
+ }
+
+ .mainuser .listeUser .research .bodyr .formitemsr .formitemr input{
+  width: 100%;
+    padding: 12px ;
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 4px;
+ }
+
+ .mainuser .listeUser .research .bodyr .bttn{
+  
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 5px 10px;
+  background-color: rgb(244, 244, 244);
+ }
+
+ .mainuser .listeUser .research .bodyr .bttn button{
+  background-color: var(--maincolor);
+  width: 200px;
+  font-size: 15px;
+  font-weight: bold;
+  color:white;
+  cursor: pointer;
+
+ }
+
+ .mainuser .listeUser .research .bodyr .bttn button:hover{
+  opacity: 0.8;
+
+ }
+
+@media(max-width:600px){
+  .mainuser .listeUser .research .bodyr .bttn button{
+    
+    width: 100%;
+    
+   }
+  
+}

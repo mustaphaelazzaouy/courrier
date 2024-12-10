@@ -1,0 +1,125 @@
+.mainsrv{
+    padding: 20px;
+  min-height: 100dvh;
+}
+
+.mainsrv .formitems{
+    border: 1px solid rgb(211, 211, 211);
+    background-color: rgb(236, 236, 236);
+   border-radius: 7px;
+   padding: 10px;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   /* grid-template-columns: repeat(6, minmax(100px, 1fr)); */
+}
+@media (max-width: 600px) {
+  .mainsrv .formitems {
+    grid-template-columns:  1fr;
+  }
+  }
+
+.mainsrv .formitems .formitem{
+    /* background-color: rgb(128, 160, 250); */
+    padding: 10px;
+  
+ }
+
+ .mainsrv .formitems .formitem input,textarea,select {
+    width: 100%;
+    padding: 12px ;
+    display: inline-block;
+    border: 2px solid transparent;
+    border-radius: 4px;
+ 
+  }
+ 
+  .mainsrv .formitems .formitem .erreur{
+    border: 2px red solid;
+  }
+  .mainsrv .formitems .formitem button {
+
+    background-color: var(--maincolor);
+    color: white;
+    font-size: 15pt;
+    width: var(--widthBtn);
+  cursor: pointer;
+  }
+
+  @media (max-width: 650px){
+    .mainsrv .formitems .formitem button   {
+      width: 100%;
+      }
+      }
+
+  .mainsrv   .formitems.btn   {
+   
+    background-color: transparent;
+    display: flex;
+    grid-template-columns:  1fr 1fr;
+    gap:10px;
+    border: 0px transparent solid;
+  }
+  @media (max-width: 650px){
+    .mainsrv   .formitems.btn   {
+       flex-direction: column;
+      }
+      }
+  .mainsrv   .formitems.btn  .formitem {
+    padding: 0px;
+    
+  }
+
+
+ /* tableau css ******************/
+ .mainsrv .listeSrv{
+   
+  border-radius: 7px;
+ 
+  overflow-x: auto;
+}
+ 
+.mainsrv .listeSrv h3{
+ 
+ 
+}
+ 
+/********pagination*/
+.mainsrv .paginationBttns{
+
+ margin-top: 10px;
+ height: 40px;
+ padding-left: 15px;
+ align-items: center;
+ list-style: none;
+ display: flex;
+ justify-content: end;
+ gap:10px;
+ flex-direction: row-reverse;
+}
+.mainsrv .paginationBttns a{
+ background-color:rgb(247, 251, 241) ;
+  color:  var(--maincolor);
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px  15px;
+  
+  border: 1px var(--maincolor3) solid;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+ }
+ .mainsrv .paginationBttns a:hover{
+  background-color: var(--maincolor);
+  color: white;
+ }
+ .mainsrv .paginationactive a{
+  border-bottom: 3px solid var(--maincolor);
+
+ }
+ .mainsrv .previous a {
+  background-color: var(--maincolor) ;
+  color: white;
+ }
+ .mainsrv .next a {
+  background-color: var(--maincolor) ;
+  color: white;
+ }
