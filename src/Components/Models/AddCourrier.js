@@ -43,7 +43,23 @@ export default function AddCourrier(props) {
             </div>
 
 
-            <div className="formitem">
+            
+            <div className="formitem" >
+                <h3>الملاحظات</h3>
+                <textarea placeholder="... الملاحظات" name="observation"></textarea>
+                               </div>
+
+            <div className="formitem" >
+                <h3>تحميل الملف</h3>
+                <input type="file"  name="file" accept="" />
+            </div>
+           
+
+
+        </div>
+
+        <div className='formitems'>
+        <div className="formitem">
                 <h3>المديرية الإقليمية<span className='etoile'>*</span></h3>
                 <select name="dp">
                     <option value="1"></option>
@@ -64,18 +80,6 @@ export default function AddCourrier(props) {
                     <option value="5">5</option>
                 </select>
             </div>
-
-            <div className="formitem" >
-                <h3>الملاحظات</h3>
-                <textarea placeholder="... الملاحظات" name="observation"></textarea>
-                               </div>
-
-            <div className="formitem" >
-                <h3>تحميل الملف</h3>
-                <input type="file"  name="file" accept="" />
-            </div>
-
-
         </div>
         <div className="formitems btn ">
             <div className="formitem ">
