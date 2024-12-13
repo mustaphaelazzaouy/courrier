@@ -39,6 +39,7 @@ const {cloudinaryRemoveImage,cloudinaryUploadImage}=require('../utils/cloudinary
 
     })
        //5.send response
+       
        res.status(201).json(post)
        //6. remove image from sever
        fs.unlinkSync(imagePath)
