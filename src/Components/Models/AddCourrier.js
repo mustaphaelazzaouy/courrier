@@ -1,10 +1,34 @@
-import React from 'react'
+import React, { useMemo, useState } from 'react'
 import "../../Styles/AddCourrier.css";
+import axios from 'axios';
+import request from '../../utils/request';
 export default function AddCourrier(props) {
-
+const [postNumber, setPostNumber]=useState({value:"",err:false})
+const [subject, setSubject]=useState({value:"",err:false})   
+const [dateReceive, setDateReceive]=useState({value:"",err:false})   
+const [dateExecute, setDateExecute]=useState({value:"",err:false})  
+const [observation, setObservation]=useState({value:"",err:false}) 
+const [file, setFile]=useState({value:"",err:false}) 
+const handleForm=async(e)=> {
+    e.preventDefault();
+    const formData=new FormData()
+    formData.append("postNumber",postNumber.value)
+    formData.append("subject",subject.value)
+    formData.append("dateReceive",dateReceive.value)
+    formData.append("dateExecute",dateExecute.value)
+    formData.append("observation",observation.value)
+    formData.append("file",file.value)
+    console.log(file.value)
+    await request.post('/api/post',formData,{
+        headers:{
+            "Content-Type":"multipart/form-data"
+        }
+    }).then(()=>console.log('ok'))
+    .catch(e=>console.log(e))
     
 
-
+    
+} 
   return (
     <div className="backgroundadd">
      
@@ -25,62 +49,54 @@ export default function AddCourrier(props) {
                 <h3>رقم المراسلة <span className='etoile'>*</span>
                 
                 </h3>
-                <input type="text" placeholder="... رقم المراسلة"  name="numcrr" />
+                <input type="text" placeholder="... رقم المراسلة"  
+                onChange={(e)=>setPostNumber({value:e.target.value})}
+                name="numcrr" />
             </div>
 
             <div className="formitem">
                 <h3>الموضوع<span className='etoile'>*</span></h3>
-                <input type="text" placeholder="... الموضوع" name="objet" onChange="{e=>setObjet(e.target.value)}" />
+                <input type="text" placeholder="... الموضوع" 
+                name="objet" 
+                onChange={(e)=>setSubject({value:e.target.value})}
+                 />
             </div>
             <div className="formitem">
                 <h3>تاريخ التوصل <span className='etoile'>*</span></h3>
-                <input type="date" name="daterec" />
+                <input type="date"
+                 name="daterec"
+                 onChange={(e)=>setDateReceive({value:e.target.value})}
+                 />
             </div>
 
             <div className="formitem">
                 <h3>تاريخ التنفيذ <span className='etoile'>*</span></h3>
-                <input type="date" name="datexe" />
+                <input type="date" name="datexe"
+                onChange={(e)=>setDateExecute({value:e.target.value})}
+                />
             </div>
 
 
-            <div className="formitem">
-                <h3>المديرية الإقليمية<span className='etoile'>*</span></h3>
-                <select name="dp">
-                    <option value="1"></option>
-                    <option value="2">طانطان</option>
-                    <option value="3">كلميم</option>
-                    <option value="4">أسا الزاك</option>
-                    <option value="5">سيدي إفني</option>
-                </select>
-            </div>
-
-            <div className="formitem">
-                <h3>المصلحة<span className='etoile'>*</span></h3>
-                <select name="service">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
 
             <div className="formitem" >
                 <h3>الملاحظات</h3>
-                <textarea placeholder="... الملاحظات" name="observation"></textarea>
+                <textarea placeholder="... الملاحظات" name="observation"
+                onChange={(e)=>setObservation({value:e.target.value})}
+                ></textarea>
                                </div>
 
             <div className="formitem" >
                 <h3>تحميل الملف</h3>
-                <input type="file"  name="file" accept="" />
+                <input type="file"  name="file" accept=""
+                onChange={(e)=>setFile({value:e.target.files[0]})}
+                />
             </div>
 
 
         </div>
         <div className="formitems btn ">
             <div className="formitem ">
-            <button type="submit"   >إرسال</button>
-                {/* <button onClick={abbassi}>إرسال</button> */}
+            <button type="submit" onClick={handleForm}  >إرسال</button>
             </div>
             <div className="formitem ">
                 <button onClick="{update}" >تعديل</button>

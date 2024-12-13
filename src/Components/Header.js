@@ -4,11 +4,17 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 import { useNavigate } from 'react-router-dom';
+import {useDispatch, useSelector} from 'react-redux'
+import { authActions } from "../redux/slices/authSlice";
 
 function Header() {
+  const redirect=useNavigate()
+
+const dispatch=useDispatch()
+const {user}=useSelector(state=>state.auth)
   const [isOpen, setIsOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
-  const redirect=useNavigate()
+
 
   function toggelMenu() {
     setIsOpen((open) => !open);
@@ -20,6 +26,7 @@ function Header() {
 
 
   function toggelUser1() {
+    dispatch(authActions.signOut())
     redirect("/")
   }
 
@@ -43,16 +50,23 @@ function Header() {
           </div>
           
           
-
+          {user.profile==="admin" ?
+(
+  <>
           <div className="item">
             <Link to="/CreateCourrier">مراسلة</Link>
           </div>
           <div className="item">
             <Link to="/CreateUser">المستخدم</Link>
           </div>
+          
           <div className="item">
             <Link to="/Services">المصالح</Link>
           </div>
+          </>
+          
+          ):("")
+          }
           <div className="item">
             <Link to="/Statistiques">إحصائيات</Link>
           </div>
@@ -61,7 +75,7 @@ function Header() {
           </div>
           <div className="itemuser">
             {" "}
-            <Link to=""  onClick={toggelUser}>مصطفى العزاوي </Link>{" "}
+            <Link to=""  onClick={toggelUser}>{user?.nom+" "+user?.prenom}</Link>{" "}
           </div>
         </div>
         

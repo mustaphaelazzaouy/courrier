@@ -10,5 +10,5 @@ const ServiceSchema=mongoose.Schema({
     }
 },{timestamps:true});
 
-const Service=mongoose.model("Service",ServiceSchema);
+const Service=mongoose.model("service",ServiceSchema);
 module.exports=Service;

@@ -32,10 +32,9 @@ const handleForm= async(e)=>{
     prenom:prenom.value,
     login:login.value,
     email:email.value,
-    mot_passe:passwd1.value,
-    dp: dp.value,
+    password:passwd1.value,
     service: srv.value,
-    profil:profil.value
+    profile:profil.value
   };
 
 
@@ -193,7 +192,7 @@ useMemo(()=>{
 
           (
             dpData.map((data, i) => (
-            <option  key={i}>{data.service}</option>)))}
+            <option  key={i} value={data._id}>{data.service}</option>)))}
             </select>
             <p className="err"> {srv.err ? msg : ""}</p>
           </div>

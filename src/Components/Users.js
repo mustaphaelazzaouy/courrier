@@ -178,8 +178,8 @@ const handleresearch=()=>{
                   <td data-cell="النسب">{user.nom} </td>
                   <td data-cell="إسم المستعمل ">{user.login}</td>
                   <td data-cell="البريد الإلكتروني">{user.email}</td>
-                  <td data-cell="المديرية">{user.dp}</td>
-                  <td data-cell="المصلحة">{user.service}</td>
+                  <td data-cell="المديرية">{user.service.dp}</td>
+                  <td data-cell="المصلحة">{user.service.service}</td>
                   <td data-cell="تعديل">
                     <FontAwesomeIcon
                       icon={faPenToSquare}
